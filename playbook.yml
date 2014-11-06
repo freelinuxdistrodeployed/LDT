@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: Instalar el tren
+    command: apt-get install sl
+    sudo: yes
