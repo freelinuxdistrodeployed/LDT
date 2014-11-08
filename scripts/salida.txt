@@ -1,0 +1,30 @@
+Host12014.cloudapp.net | success | rc=0 >>
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/sda1         29528M 1086M    26942M   4% /
+udev                832M    1M      832M   1% /dev
+tmpfs               169M    1M      168M   1% /run
+none                  5M    0M        5M   0% /run/lock
+none                841M    0M      841M   0% /run/shm
+none                  1M    0M        1M   0% /etc/network/interfaces.dynamic.d
+/dev/sdb1         70554M  180M    66790M   1% /mnt
+
+Host22014.cloudapp.net | success | rc=0 >>
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/sda1         29528M 1088M    26941M   4% /
+udev                832M    1M      832M   1% /dev
+tmpfs               169M    1M      168M   1% /run
+none                  5M    0M        5M   0% /run/lock
+none                841M    0M      841M   0% /run/shm
+none                  1M    0M        1M   0% /etc/network/interfaces.dynamic.d
+/dev/sdb1         70554M  180M    66790M   1% /mnt
+
+Host32014.cloudapp.net | success | rc=0 >>
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/sda1         29528M 1084M    26944M   4% /
+udev                832M    1M      832M   1% /dev
+tmpfs               169M    1M      168M   1% /run
+none                  5M    0M        5M   0% /run/lock
+none                841M    0M      841M   0% /run/shm
+none                  1M    0M        1M   0% /etc/network/interfaces.dynamic.d
+/dev/sdb1         70554M  180M    66790M   1% /mnt
+
