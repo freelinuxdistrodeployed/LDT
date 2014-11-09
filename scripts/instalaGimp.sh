@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script de instalación de LibreOffice en todos los host.
+#Script de instalación de Gimp en todos los host.
 
 #Mostramos el uso de disco en los equipos antes de la instalación.
 echo "Antes de la instalación"
