@@ -3,12 +3,12 @@
 
 Repositorio principal del proyecto.
 
-1. [playbooks](playbooks)
+1. [Playbooks](playbooks)
 
    1.1 [playbook inicial](playbooks/playbook.yml)
 
    1.2 [playbook Gimp](playbooks/playbookGimp.yml)
-2. [scripts](scripts)
+2. [Scripts](scripts)
 
    2.1 [uso disco](scripts/usoDisco.sh)
 
