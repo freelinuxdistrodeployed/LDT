@@ -1,5 +1,6 @@
 #!/bin/bash
-#Script para consultar los paquetes instalados en los hosts
+#Script para consultar paquete instalado en host, modo de ejecucion:
+#./consultaPaquetes.sh <nombre_paquete>
 ansible all -a "dpkg --get-selections" > salida.txt
 
 numHost=`wc -l /etc/ansible/hosts`

@@ -15,7 +15,7 @@ do
 
         while read linea;
         do
-                echo $linea | grep libreoffice
+                echo $linea | grep $1
         done < salida.txt
         echo -e "\n"
 done
