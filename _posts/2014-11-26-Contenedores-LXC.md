@@ -228,9 +228,15 @@ Tras instalarlo configuramos la nueva interfaz de red, para eso haremos uso de [
 
 Para añadir una interfaz nueva hacemos **brctl addbr (nombre de la interfaz)**:
 
-    brctl addbr br0
+    brctl addbr lxcbr0
 
+Configuramos su dirección de red y máscara:
 
+    ifconfig lxcbr0 10.0.0.1/24
+
+Vemos el resultado:
+
+    ifconfig lxcbr0
 
 
 
