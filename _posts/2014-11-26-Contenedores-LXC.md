@@ -318,7 +318,7 @@ Una vez instalado todo y configurado correctamente ya podemos probar la conectiv
         "ping": "pong"
     }
 
-También podemos probar una orden simple para ver que funciona:
+También podemos probar una orden simple que nos muestre la ocupación de los discos para ver que funciona:
 
     Ubuntu> ansible all -a "df"
     host1 | success | rc=0 >>
