@@ -298,6 +298,56 @@ Nos conectarnos:
 
 ##Objetivo final: testear LDT (Ansible) de forma local
 
+Para ello debemos instalar Ansible en nuestra máquina, generar el par de claves de la misma, enviarlas a cada uno de los contenedores y por último, añadir al inventario (/etc/ansible/hosts) las máquinas con las que se va a trabajar. Todo ello está explicado paso a paso en el primer post.
+
+Nota: los contenedores que hemos creado no tienen instalado Python por defecto. Esto nos impide que podamos comunicarnos con ellos a través de Ansible. Por tanto, para realizar una primera prueba con Ansible, previamente tenemos que instalar el paquete de Python en cada uno de ellos. De lo contrario nos lanzará un error de conexión.
+
+Una vez instalado todo y configurado correctamente ya podemos probar la conectividad de Ansible con los hosts:
+
+    Ubuntu> ansible -m ping all
+    host2 | success >> {
+        "changed": false, 
+        "ping": "pong"
+    }
+    host1 | success >> {
+        "changed": false, 
+        "ping": "pong"
+    }
+    host3 | success >> {
+        "changed": false, 
+        "ping": "pong"
+    }
+
+También podemos probar una orden simple para ver que funciona:
+
+    Ubuntu> ansible all -a "df"
+    host1 | success | rc=0 >>
+    Filesystem                                             1K-blocks     Used Available Use% Mounted on
+    /dev/disk/by-uuid/e271f34b-4458-45d8-957c-e124713bfdc5  58218708 39186972  16051284  71% /
+    none                                                           4        0         4   0% /sys/fs/cgroup
+    none                                                      390948       56    390892   1% /run
+    none                                                        5120        0      5120   0% /run/lock
+    none                                                     1954732        0   1954732   0% /run/shm
+    none                                                      102400        0    102400   0% /run/user
+    
+    host3 | success | rc=0 >>
+    Filesystem                                             1K-blocks     Used Available Use% Mounted on
+    /dev/disk/by-uuid/e271f34b-4458-45d8-957c-e124713bfdc5  58218708 39186860  16051396  71% /
+    none                                                           4        0         4   0% /sys/fs/cgroup
+    none                                                      390948       56    390892   1% /run
+    none                                                        5120        0      5120   0% /run/lock
+    none                                                     1954732        0   1954732   0% /run/shm
+    none                                                      102400        0    102400   0% /run/user
+    
+    host2 | success | rc=0 >>
+    Filesystem                                             1K-blocks     Used Available Use% Mounted on
+    /dev/disk/by-uuid/e271f34b-4458-45d8-957c-e124713bfdc5  58218708 39186784  16051472  71% /
+    none                                                           4        0         4   0% /sys/fs/cgroup
+    none                                                      390948       56    390892   1% /run
+    none                                                        5120        0      5120   0% /run/lock
+    none                                                     1954732        0   1954732   0% /run/shm
+    none                                                      102400        0    102400   0% /run/user
+    
 
 Información interesante:
 
