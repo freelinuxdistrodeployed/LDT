@@ -7,7 +7,7 @@ Repositorio principal del proyecto.
 
 2. [Scripts](scripts)
 
-[(Acceder al diario de desarollo)](https://github.com/freelinuxdistrodeployed/diarioDesarrollo)
+[(Página web)](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/)
 
 
 
