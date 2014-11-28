@@ -12,7 +12,7 @@ header-img: "img/post-bg-01.jpg"
 
 ##Instalamos Ansible en el servidor:
 
-Como el servidor que estmos usando es Ubuntu podemos instalamos la última versión del software con apt:
+Como el servidor que estamos usando es Ubuntu podemos instalamos la última versión del software con apt:
 
 {% highlight bash %}
 sudo apt-get install software-properties-common
