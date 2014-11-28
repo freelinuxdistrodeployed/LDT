@@ -3,7 +3,7 @@ layout:     post
 title:      "Contenedores LXC"
 subtitle:   "Ventajas para el testing"
 date:       2014-11-26 12:00:00
-author:     "juanAFernandez"
+author:     "juanAFernandez, juanantc"
 header-img: "img/post-bg-01.jpg"
 ---
 
@@ -239,8 +239,6 @@ Vemos el resultado:
     ifconfig lxcbr0
 
 
-
-
 Una vez solucionado el problema del dispositivo de red podremos arrancar el contenedor:
 
 
@@ -261,6 +259,41 @@ Una vez solucionado el problema del dispositivo de red podremos arrancar el cont
     ubuntu@test-container:~$
 
 ##Conexiones entre contenedores y anfitrión
+
+Para probar la conexión entre contenedores y anfitrión vamos a proceder a crear tres contenedores que simularán tres hosts (host1, host2, host3).
+
+    sudo lxc-create -t ubuntu -n host<n>
+
+Una vez creados, los lanzamos:
+
+    sudo lxc-start -n host<n>
+    
+Como ejemplo, vamos a usar SSH para conectarnos al host1. Previamente debemos saber su dirección ip. Esto lo hacemos de la siguiente manera:
+
+    Ubuntu> sudo lxc-info -n host1
+    Name:           host1
+    State:          RUNNING
+    PID:            662
+    IP:             10.0.3.xxx
+    IP:             192.168.0.1
+    CPU use:        1.48 seconds
+    BlkIO use:      1.22 MiB
+    Memory use:     7.97 MiB
+    KMem use:       0 bytes
+    Link:           vethRIG4N4
+     TX bytes:      8.04 KiB
+     RX bytes:      20.50 KiB
+     Total bytes:   28.54 KiB
+
+Nos conectarnos:
+
+    Ubuntu> ssh ubuntu@10.0.3.xxx
+    ubuntu@10.0.3.xxx's password: 
+    Welcome to Ubuntu 14.04.1 LTS (GNU/Linux 3.13.0-37-generic x86_64)
+    
+     * Documentation:  https://help.ubuntu.com/
+    Last login: Fri Nov 28 19:10:41 2014 from 10.0.3.1
+    ubuntu@host1:~$ 
 
 
 ##Objetivo final: testear LDT (Ansible) de forma local
