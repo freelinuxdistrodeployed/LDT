@@ -57,7 +57,7 @@ Y ahora procedemos a la instalación de nuestra primera imagen:
 
 Al finalizar la instalación veremos lo siguiente:
 
-```sh
+<pre>
 ubuntu:latest: The image you are pulling has been verified
 
 511136ea3c5a: Pull complete
@@ -68,17 +68,17 @@ ubuntu:latest: The image you are pulling has been verified
 dc07507cef42: Pull complete
 86ce37374f40: Pull complete
 Status: Downloaded newer image for ubuntu:latest
-
-```
+</pre>
 
 Ahora si queremos listar nuestros contenedores instalados:
 
 <pre>sudo docker ps -a</pre>
 
-```sh
+<pre>
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES
 f11355edfe16        ubuntu:latest       "/bin/bash"         5 minutes ago
-```
+</pre>
+
 Si queremos acceder a el:
 
 <pre>sudo docker run -i -t ubuntu</pre>
