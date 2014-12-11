@@ -1,4 +1,4 @@
-#[LTD](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/) (Lilux Deployed Tool)]
+#[LTD](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/) (Linux Deployed Tool)]
 
 ![](img/linux-console.jpg)
 
