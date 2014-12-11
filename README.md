@@ -1,4 +1,4 @@
-#[LTD](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/) (Linux Deployed Tool)]
+#[LDT](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/) (Linux Deployed Tool)]
 
 ![](img/linux-console.jpg)
 
@@ -9,11 +9,16 @@ Sistema de control y mantenimiento remoto de equipos con S.O. Linux.
 
 ###Instalación:
 
-Para realizar la instalación de LTD sólo es necesario hacer clone de este repositorio así:
+Para realizar la instalación de LDT sólo es necesario hacer clone de este repositorio así:
 
     git clone https://github.com/freelinuxdistrodeployed/freelinuxdistrodeployed.git
 
-Después ejecutar el script install.sh que realizará la instalación de todos los paquetes necesarios para el funcionamiento de LTD.
+Después ejecutar el script **install.sh** que realizará la instalación de todos los paquetes necesarios para el funcionamiento de LTD.
+
+
+###Uso:
+
+Antes de poder usar cualquiera de los script deben de añadirse al fichero **hosts** los equipos sobre los que queramos hacer las operaciones.
 
 ###Desarrollo:
 
