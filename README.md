@@ -13,7 +13,7 @@ Para realizar la instalación de LDT sólo es necesario hacer clone de este repo
 
     git clone https://github.com/freelinuxdistrodeployed/freelinuxdistrodeployed.git
 
-Después ejecutar el script **install.sh** que realizará la instalación de todos los paquetes necesarios para el funcionamiento de LTD.
+Después ejecutar el script **install.sh** que realizará la instalación de todos los paquetes necesarios para el funcionamiento de LDT.
 
 
 ###Uso:
