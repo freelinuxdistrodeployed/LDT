@@ -1,0 +1,10 @@
+---
+#Este playbook contiene las instalaciones comunes ejecutadas en todos los nodos:
+
+  - name: Instalación del paquete ofimatico 
+    apt: pkg=libreoffice state=latest
+
+  - name: Instalar editor grafico gimp
+    apt: pkg=chromium-browser state=latest
+
+    
