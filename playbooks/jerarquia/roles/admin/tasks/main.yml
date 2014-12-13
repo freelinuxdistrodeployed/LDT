@@ -1,0 +1,8 @@
+---
+#Instalaciones solo en los hosts de administracion:
+
+  - name: Instalacion del ptren
+    apt: pkg=sl state=latest
+
+
+    
