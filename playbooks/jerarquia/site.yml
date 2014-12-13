@@ -2,9 +2,12 @@
 #Despliegue de configuración de todos los equipos:
 
 - name: apply common configuration to all nodes
-  hosts: all
+  sudo: true
+  hosts: admin
   remote_user: root
 
   roles:
-    - common
- 
+    - admin
+
+
+
