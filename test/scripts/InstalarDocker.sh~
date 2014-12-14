@@ -21,8 +21,5 @@ sudo docker -d &
 #Instalación de Ubuntu
 sudo docker pull ubuntu
 
-#Creación de la imagen de pruebas
-sudo docker build -t "pruebas" - < recurso_pruebas.tar.gz
-
-#Ejecución de la imagen de pruebas
-sudo docker run -i pruebas
+#Ejecución del entorno de pruebas
+sudo docker run -i -t ubuntu
