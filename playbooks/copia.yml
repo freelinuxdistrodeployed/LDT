@@ -3,5 +3,5 @@
   sudo: true
   tasks:
   - name: Copiar ficheros a los host
-    copy: src=../fichero dest=/home/fichero owner=root group=root mode=644
+    copy: src=../{{fichero}} dest=/home/{{fichero}} owner=root group=root mode=644
  

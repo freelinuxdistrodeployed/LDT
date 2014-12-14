@@ -1,3 +1,5 @@
+
+
 #!/bin/bash
 
 # -e para que interprete las ordenes especiales de la barra invertida \
@@ -29,10 +31,12 @@ function _submenu1()
 
 function _submenu2()
 {
-    echo
-    echo "1) Submenu2-1"
-    echo "2) Submenu2-2"
-    echo "3) Salir"
+    echo -e "\n\e[0;32mAcciones\e[0m"
+    echo "1) Consultar hardware de los hosts"
+    echo "2) Consultar ocupación de disco"
+    echo "3) Crear usuario en todos los hosts"
+    echo "4) Distribuir ficheros a los host"
+    echo -e "5) \e[1;31mSalir\e[0m"
     echo
     echo -n "Indica una opcion: "
 }
@@ -41,7 +45,8 @@ opc=0
 until [ $opc -eq 3 ]
 do
     case $opc in
-        1)
+
+        1) #ADMINISTRACIÓN DE HOSTS
             opc1=0
             until [ $opc1 -eq 4 ]
             do
@@ -77,17 +82,43 @@ do
             done
             _menuPrincipal
             ;;
-        2)
+
+        2) #ACCIONES
+
+           #Variables necesarias para la creación de usuarios
+	   $nombreUsuario
+	   $pass
+
             opc2=0
-            until [ $opc2 -eq 3 ]
+            until [ $opc2 -eq 5 ]
             do
                 case $opc2 in
-                    1)
-                        echo "menu 2 submenu 1 Listar hosts"
+                    1)  #Elección 1 del submenu2
+			. scripts/hardwareHosts.sh 
+			_submenu2
                         ;;
                     2)
-                        echo "menu 2 submenu 2 Añadir hosts"
+			echo 
+                        . scripts/usoDisco.sh
+			_submenu2
                         ;;
+
+		    3)
+			echo "Creación de usuario tipo general: "
+                        echo -e  "Introduzca \e[1;31mnombre\e[0m de usuario:"
+			read -p "--> " nombreUsuario
+			echo -e "Introduzca \e[1;31mcontraseña\e[0m para $nombreUsuario"
+			read -p "--> " pass
+			#Ejecución del playbook
+			ansible-playbook playbooks/usuarioAnsibleParametros.yml -e "usuario=$nombreUsuario password=$pass"
+			_submenu2
+			;;
+
+		    4)
+
+			echo
+			;;
+
                     *)
                         _submenu2
                         ;;
