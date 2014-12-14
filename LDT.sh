@@ -1,3 +1,5 @@
+
+
 #!/bin/bash
 
 # -e para que interprete las ordenes especiales de la barra invertida \
@@ -29,10 +31,13 @@ function _submenu1()
 
 function _submenu2()
 {
-    echo
-    echo "1) Submenu2-1"
-    echo "2) Submenu2-2"
-    echo "3) Salir"
+    echo -e "\n\e[0;32mAcciones\e[0m"
+    echo "1) Consultar hardware de los hosts"
+    echo "2) Consultar ocupación de disco"
+    echo "3) Crear usuario en todos los hosts"
+    echo "4) Consultar usuarios de los hosts"
+    echo "5) Eliminar un usuario de los hosts"
+    echo -e "6) \e[1;31mSalir\e[0m"
     echo
     echo -n "Indica una opcion: "
 }
@@ -41,7 +46,8 @@ opc=0
 until [ $opc -eq 3 ]
 do
     case $opc in
-        1)
+
+        1) #ADMINISTRACIÓN DE HOSTS
             opc1=0
             until [ $opc1 -eq 4 ]
             do
@@ -77,17 +83,59 @@ do
             done
             _menuPrincipal
             ;;
-        2)
+
+        2) #ACCIONES
+
+           #Variables necesarias para la creación de usuarios
+	   
+	   
+
             opc2=0
-            until [ $opc2 -eq 3 ]
+            until [ $opc2 -eq 6 ]
             do
                 case $opc2 in
-                    1)
-                        echo "menu 2 submenu 1 Listar hosts"
+                    1)  #Elección 1 del submenu2: Consultar hardware de equipos
+			. scripts/hardwareHosts.sh 
+			_submenu2
                         ;;
-                    2)
-                        echo "menu 2 submenu 2 Añadir hosts"
+                    2)  #Elección 2 del submenu2: Consultar espacio de disco de los equipos
+			echo 
+                        . scripts/usoDisco.sh
+			_submenu2
                         ;;
+
+		    3)  #Elección 3 del submenu2: Creación general de usuario
+			echo "Creación de usuario tipo general: "
+                        echo -e  "Introduzca \e[1;31mnombre\e[0m de usuario:"
+			read -p "--> " nombreUsuario
+			echo -e "Introduzca \e[1;31mcontraseña\e[0m para $nombreUsuario"
+			read -p "--> " pass
+			#Ejecución del playbook
+			ansible-playbook playbooks/usuarioAnsibleParametros.yml -e "usuario=$nombreUsuario password=$pass"
+			_submenu2
+			;;
+
+		    4)  #Lista todos los usuarios de cada uno de los hosts
+			ansible all -a "cat /etc/passwd"
+			echo
+			_submenu2
+			;;
+
+		    5) #Elección 5 del submenu 2: Elminación de un usario
+		       echo "Nombre del usuario: "
+		       read -p "--> " nombreUsuario
+                       ansible-playbook playbooks/eliminarUsuarioParametros.yml -e "usuario=$nombreUsuario"
+		       echo
+                       _submenu2
+                       ;;
+
+
+		   6) #Elección 6 del submenu2: Consulta de red
+		      ansible all -a "vnstat"
+		      echo
+                      _submenu2
+		      ;;
+
                     *)
                         _submenu2
                         ;;
