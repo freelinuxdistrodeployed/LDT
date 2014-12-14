@@ -35,8 +35,9 @@ function _submenu2()
     echo "1) Consultar hardware de los hosts"
     echo "2) Consultar ocupación de disco"
     echo "3) Crear usuario en todos los hosts"
-    echo "4) Distribuir ficheros a los host"
-    echo -e "5) \e[1;31mSalir\e[0m"
+    echo "4) Consultar usuarios de los hosts"
+    echo "5) Eliminar un usuario de los hosts"
+    echo -e "6) \e[1;31mSalir\e[0m"
     echo
     echo -n "Indica una opcion: "
 }
@@ -86,24 +87,24 @@ do
         2) #ACCIONES
 
            #Variables necesarias para la creación de usuarios
-	   $nombreUsuario
-	   $pass
+	   
+	   
 
             opc2=0
-            until [ $opc2 -eq 5 ]
+            until [ $opc2 -eq 6 ]
             do
                 case $opc2 in
-                    1)  #Elección 1 del submenu2
+                    1)  #Elección 1 del submenu2: Consultar hardware de equipos
 			. scripts/hardwareHosts.sh 
 			_submenu2
                         ;;
-                    2)
+                    2)  #Elección 2 del submenu2: Consultar espacio de disco de los equipos
 			echo 
                         . scripts/usoDisco.sh
 			_submenu2
                         ;;
 
-		    3)
+		    3)  #Elección 3 del submenu2: Creación general de usuario
 			echo "Creación de usuario tipo general: "
                         echo -e  "Introduzca \e[1;31mnombre\e[0m de usuario:"
 			read -p "--> " nombreUsuario
@@ -114,10 +115,26 @@ do
 			_submenu2
 			;;
 
-		    4)
-
+		    4)  #Lista todos los usuarios de cada uno de los hosts
+			ansible all -a "cat /etc/passwd"
 			echo
+			_submenu2
 			;;
+
+		    5) #Elección 5 del submenu 2: Elminación de un usario
+		       echo "Nombre del usuario: "
+		       read -p "--> " nombreUsuario
+                       ansible-playbook playbooks/eliminarUsuarioParametros.yml -e "usuario=$nombreUsuario"
+		       echo
+                       _submenu2
+                       ;;
+
+
+		   6) #Elección 6 del submenu2: Consulta de red
+		      ansible all -a "vnstat"
+		      echo
+                      _submenu2
+		      ;;
 
                     *)
                         _submenu2
