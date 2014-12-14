@@ -12,7 +12,8 @@ function _menuPrincipal()
     echo -e "\n\e[0;32mLDT\e[0m Menú Principal:"
     echo "1) Admin HOST"
     echo "2) Acciones"
-    echo -e "3) \e[1;31mSalir\e[0m"
+    echo "3) Carga de perfiles"
+    echo -e "4) \e[1;31mSalir\e[0m"
     echo
     #-n para no hacer el intro al final
     echo -n "Indica una opcion: "
@@ -37,13 +38,24 @@ function _submenu2()
     echo "3) Crear usuario en todos los hosts"
     echo "4) Consultar usuarios de los hosts"
     echo "5) Eliminar un usuario de los hosts"
-    echo -e "6) \e[1;31mSalir\e[0m"
+    echo "6) Consultar consumo de red"
+    echo -e "7) \e[1;31mSalir\e[0m"
     echo
     echo -n "Indica una opcion: "
 }
 
+function _submenu3()
+{
+    echo -e "\n\e[0;32mDespliegue de perfiles\e[0m"
+    echo "1) Ver grupos de host"
+    echo "2) Despliegue del perfil de administracion"
+    echo "3) Despliegue del perfil ..."
+    echo -e "4) \e[1;31mSalir\e[0m"
+    echo -n "Indica una opcion: "
+}
+
 opc=0
-until [ $opc -eq 3 ]
+until [ $opc -eq 4 ]
 do
     case $opc in
 
@@ -86,20 +98,18 @@ do
 
         2) #ACCIONES
 
-           #Variables necesarias para la creación de usuarios
-	   
-	   
+           #Variables necesarias para la creación de usuarios:
 
             opc2=0
-            until [ $opc2 -eq 6 ]
+            until [ $opc2 -eq 7 ]
             do
                 case $opc2 in
                     1)  #Elección 1 del submenu2: Consultar hardware de equipos
-			. scripts/hardwareHosts.sh 
+			. scripts/hardwareHosts.sh
 			_submenu2
                         ;;
                     2)  #Elección 2 del submenu2: Consultar espacio de disco de los equipos
-			echo 
+			echo
                         . scripts/usoDisco.sh
 			_submenu2
                         ;;
@@ -136,14 +146,49 @@ do
                       _submenu2
 		      ;;
 
-                    *)
-                        _submenu2
-                        ;;
+                   *)
+                       _submenu2
+                       ;;
                 esac
                 read opc2
             done
             _menuPrincipal
             ;;
+
+	3) #CARGA DE PERFILES
+
+            opc3=0
+            until [ $opc3 -eq 4 ]
+            do
+                case $opc3 in
+
+		    1)  #Visión de grupos
+			echo -e "\e[1;32mGrupos de hosts:\e[0m"
+			cat playbooks/jerarquia/hosts
+			echo ""
+			_submenu3
+                        ;;
+
+                    2)  #Elección 1 del submenu3
+		        echo -e "Cargando perfil ADMINISTRACION a host del grupo \e[1;31madmin\e[0m"
+
+			ansible-playbook -i playbooks/jerarquia/hosts playbooks/jerarquia/site.yml
+			_submenu3
+                        ;;
+                    3)  #Elección 2 del submenu3
+			echo
+			_submenu3
+                        ;;
+
+                    *)
+                        _submenu3
+                        ;;
+                esac
+                read opc3
+            done
+            _menuPrincipal
+            ;;
+
         *)
             _menuPrincipal
             ;;
