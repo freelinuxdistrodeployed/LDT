@@ -28,7 +28,9 @@ LDT funciona (en su primera versión) a través de una interfaz en terminal que 
     LDT Menú Principal:
     1) Admin HOST
     2) Acciones
-    3) Salir
+    3) Carga de perfiles
+    4) Salir
+
 
 En la sección de administración de host encontramos:
 
@@ -49,7 +51,13 @@ Después de definir los host podremos pasar a realizar tareas sobre ellos:
     6) Consultar consumo de red
 
 
+Además tenemos el núcleo del programa, la carga de perfiles en una lista de hosts:
 
+    Despliegue de perfiles
+    1) Ver grupos de host
+    2) Despliegue del perfil de administracion
+    3) Despliegue del perfil ...
+    4) Salir
 
 
 ###Desarrollo:
