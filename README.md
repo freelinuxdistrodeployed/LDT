@@ -18,7 +18,7 @@ Después ejecutar el script **install.sh** que realizará la instalación de tod
 
 ###Uso:
 
-LDT funciona (en su primera versión) a través de una interfaz en terminal que da acceso a todas las acciones que poderemos realizar con el software. Tras la ejecución de LDT.sh podemos ver el menú con las posibles acciones:
+LDT funciona (en su primera versión) a través de una interfaz en terminal que da acceso a todas las acciones que poderemos realizar con el software. Tras la ejecución de LDT.sh podemos ver el menú con estas:
 
     > . LDT.sh
 
