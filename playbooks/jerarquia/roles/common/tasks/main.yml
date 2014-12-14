@@ -1,6 +1,8 @@
 ---
 #Este playbook contiene las instalaciones comunes ejecutadas en todos los nodos:
 
+  - include: consumoRed.yml
+
   - name: Instalación del paquete ofimatico 
     apt: pkg=libreoffice state=latest
 
