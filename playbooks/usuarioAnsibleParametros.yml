@@ -1,0 +1,14 @@
+---
+#Las variables usuario y password son pasadas como parámetros en la ejecución del playbook
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Creacion de usuario
+    command: useradd -m {{ usuario }} creates=/home/{{ usuario }}
+    sudo: true
+
+  - name: Configuracion password
+    shell: usermod -p $(echo '{{ password }}' | openssl passwd -1 -stdin) {{ usuario }}
+    sudo: true
+ 
+ 
