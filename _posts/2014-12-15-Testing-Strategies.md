@@ -2,7 +2,7 @@
 layout:     post
 title:      "Testing Strategies"
 subtitle:   "Introducción  al Testing"
-date:       2014-15-12 12:30:00
+date:       2014-12-15 12:30:00
 author:     "rubenadrados"
 header-img: "img/post-bg-02.jpg"
 ---
