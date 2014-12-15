@@ -7,7 +7,6 @@ author:     "rubenadrados"
 header-img: "img/post-bg-02.jpg"
 ---
 
-
 Mediante la incorporación de un nivel de pruebas (testing) en el flujo de trabajo, habrá menos sorpresas cuando el codigo alcance la fase de producción y, en muchos casos, dichas pruebas evitaran que posibles fallos migren a la aplicación final. También es muy sencillo realizar las pruebas en los servidores de localhost.
 
 ##Nivel adecuado de Testing
