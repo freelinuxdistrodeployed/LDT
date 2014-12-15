@@ -3,7 +3,7 @@ layout:     post
 title:      "Docker y Ansible"
 subtitle:   "Integración entre Docker y Ansible"
 date:       2014-12-1 00:00:00
-author:     "mortega87"
+author:     "mortega87,JA-Gonz"
 header-img: "img/post-bg-01.jpg"
 ---
 
@@ -32,6 +32,10 @@ Comprobamos que está actualizado en la última versión con:
 Ahora agregamos el repositorio Docker:
 
 <pre>sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"</pre>
+
+Añadimos la llave pública que verifica el repositorio:
+
+<pre>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9</pre>
 
 Actualizamos la lista de fuentes:
 
@@ -86,3 +90,72 @@ Si queremos acceder a el:
 O en caso de que queramos ejecutarlo:
 
 <pre>sudo docker start -a f11355edfe16</pre>
+
+Para nuestra aplicación, más concretamente para el entorno de pruebas, se han añadido los siguientes scripts, para que la anterior instalación sea automatizada.
+
+El primer script va a actualizar el kernel. Este no puede incluirse en el de instalación Docker ya que esta actualización necesita un reinicio del sistema.
+
+<pre>
+#!/bin/bash
+
+#Actualización Kernel necesaria para poder ejecutar Docker
+
+apt-get --assume-yes install linux-image-generic-lts-raring linux-headers-generic-lts-raring
+
+reboot
+</pre>
+
+El siguiente script va a realizar la instalación de Docker.
+
+<pre>
+#!/bin/bash
+
+#Script para instalar Docker
+
+#Añadir repositorio.
+sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+
+#Añadir la llave pública que verifica el repositorio (el repositorio no está verificado por defecto, omitir este paso
+#rompería la instalación desatendida, por no hablar del fallo de seguridad)
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D8576A8BA88D21E9
+
+#Actualizacion de la lista de repositorios
+sudo apt-get update
+
+#Instalación de Docker
+sudo apt-get --assume-yes install lxc-docker
+
+#Activar demonio de Docker
+sudo docker -d &
+
+#Instalación de Ubuntu
+sudo docker pull ubuntu
+
+#Creación de la imagen de pruebas
+sudo docker build -t "pruebas" - < recurso_pruebas.tar.gz
+
+#Ejecución de la imagen de pruebas
+sudo docker run -i pruebas
+</pre>
+
+A continuación vamos a ver el Dockerfile, que va a instalar Ansible y nuestro entorno LDT (LDT.sh), el cual podremos descargar desde nuestro repositorio.
+
+<pre>
+#############################################################
+# Dockerfile para instalar ansible y ejecutar menú LDT
+# Basado en Ubuntu
+#############################################################
+
+FROM ubuntu:latest
+
+MAINTAINER JuanAFernandez juanantc mortega87 rubenadrados JA-Gonz
+
+#Instalar ansible
+
+RUN apt-get update
+RUN apt-get install -y ansible
+
+#Ejecutar menú LDT
+ADD ./LDT.sh /LDT.sh
+CMD ["/bin/bash", "/LDT.sh"]
+</pre>
