@@ -27,5 +27,8 @@ sudo docker build -t "pruebas" - < recurso_pruebas.tar.gz
 #Ejecución de la imagen de pruebas
 sudo docker run -i pruebas
 
-#Una vez ejecutado lo borramos de la carpeta para que no se ejecute cada vez que se reinicie
+#Lo desinstalamos del sistema
+sudo update-rc.d -f InstalarDocker-2.sh remove
+
+#Y lo borramos de la carpeta
 sudo rm /etc/init.d/InstalarDocker-2.sh
