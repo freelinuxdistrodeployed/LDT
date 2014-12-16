@@ -10,4 +10,7 @@ sudo cp InstalarDocker-2.sh /etc/init.d/
 #Lo instalamos
 sudo update-rc.d InstalarDocker-2.sh defaults
 
+#Para desinstalar
+#sudo update-rc.d InstalarDocker-2.sh remove
+
 reboot
