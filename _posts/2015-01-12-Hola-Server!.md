@@ -20,7 +20,7 @@ Así el proceso de despliegue funcional quedaría sistematizado en los siguiente
 * **1.** Instalación del paquete LDT, ejecución del fichero install.sh que realiza la instalación de todas las herramientas que se necesitan en el servidor.
 
 
-![imagen LDT](/img/serverLDT.png)
+![imagen LDT](/LDT/img/serverLDT.png)
 
 * **2.** Registro de los host que controlará LDT.
 
