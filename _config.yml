@@ -1,11 +1,11 @@
 # Configuración del sitio
 title: LDT
 email:
-description: ""
-baseurl: "/freelinuxdistrodeployed"
+description: "Linux Deployed Tool"
+baseurl: "/LDT"
 url: ""
 twitter_username:
-github_username:  freelinuxdistrodeployed/freelinuxdistrodeployed
+github_username:  freelinuxdistrodeployed/LDT
 facebook_username:
 
 # Build settings
