@@ -5,15 +5,15 @@ s=socket.socket()
 host=socket.gethostname()
 port=12345
 
-#Realización de la noexión:
+#Realizacion de la conexion:
 s.connect((host,port))
 
-#Imprimimos el mensaje que confirma la conexión:
+#Imprimimos el mensaje que confirma la conexion:
 print "Cliente:",s.recv(1024)
 
-#Una vez confirmada la conexión con el mensaje debemos enviar la info del host:
+#Una vez confirmada la conexion con el mensaje debemos enviar la info del host:
+s.send("hello");
 
 
-
-#Cerramos la conexión por parte del cliente:
+#Cerramos la conexion por parte del cliente:
 s.close
