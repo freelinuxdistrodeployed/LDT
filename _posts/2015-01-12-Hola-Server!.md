@@ -28,7 +28,7 @@ Así el proceso de despliegue funcional quedaría sistematizado en los siguiente
 
  **2.2** Usando un socket y activando la comunicación entre los equipos.
 
- ![imagen2](/img/serverLDT2.png)
+ ![imagen2](/LDT/img/serverLDT2.png)
 
  Activando un socket en el servidor al hacer la instalación de LDT conseguimos una forma de que el servidor pueda escuchar los mensajes de todos los equipos que quieran hablarle por ese canal. Así cuando se haga la instalación del paquete necesario en los clientes estos no solo creará un usuario especial para que LDT actúe en ellos de forma controlada, además añadirá la clave SSH del sevidor para que este pueda conectarse sin problema y además enviarán al servidor su IP y nombre (última información que será registrada en *hosts* y que será necesaria para la comunicación final).
 
