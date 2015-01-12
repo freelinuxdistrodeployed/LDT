@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Llave publica para instalar Docker"
-subtitle:   "Instalacion segura docker"
+title:      "ADD en Dockerfile"
+subtitle:   "Ejecución automática de recursos en contenedores Docker"
 date:       2014-12-11 12:40:10
 author:     "JA-Gonz"
 header-img: "img/post-bg-06.jpg"
