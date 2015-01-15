@@ -11,6 +11,6 @@
   #Actualizando:
   sudo apt-get update
   #Instalando
-  sudo apt-get --assume-yes install ansible
+  sudo apt-get install ansible
 
   ansible --version
