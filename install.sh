@@ -4,13 +4,13 @@
 #Instalación de Ansible:
 
   #Instalación de certificados:
-  sudo apt-get install software-properties-common
+  sudo apt-get install -y software-properties-common
 
   #Añadiendo los repositorios de ansible:
-  sudo apt-add-repository ppa:ansible/ansible
+  sudo apt-add-repository -y ppa:ansible/ansible
   #Actualizando:
   sudo apt-get update
   #Instalando
-  sudo apt-get install ansible
+  sudo apt-get install -y ansible
 
   ansible --version
