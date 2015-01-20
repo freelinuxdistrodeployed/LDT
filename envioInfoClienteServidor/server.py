@@ -1,4 +1,4 @@
-#SERVIDOR SIMPLE
+#SERVIDOR SIMPLE !
 
 import socket
 
@@ -16,12 +16,13 @@ s=socket.socket()
 print "Socket creado con exito"
 
 #Obtenemos el nombre de la maquina local:
-host=socket.gethostname()
+#host=socket.gethostname()
 
 #Establecemos un puerto para la escucha:
 port=12345
 
 #Enlazamos los datos al socket creado:
+#Recibimos peticiones desde cualquier maquina por el puerto especificado
 s.bind(('',port))
 
 s.listen(5);
@@ -32,6 +33,7 @@ while True:
 
 
     print 'Servidor: Recibida conexion desde:',addr
+    #En addr ya tenemos la ip del cliente, solo nos falta el nombre.
 
 #    ficheroHosts.write(addr)
 #    ficheroHosts.write("\n")
@@ -39,7 +41,11 @@ while True:
 
     #Establecida la conexion debemos recibir los datos desde el cliente y escribirlos en hosts:
 
-    c.send('Conexion establecida!')
+    #c.send('Conexion establecida!')
+
+    #Imprimimos por pantalla lo que nos envia
+    print c.recv(1024)	
+
     c.close() #Cerramos la conexion
 
 
