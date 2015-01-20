@@ -12,8 +12,8 @@ import sys
 s=socket.socket()
 
 #Obtenemos nuestro nombre de dominio
-#miNombre=socket.gethostname();
-miNombre=socket.getfqdn();
+miNombre=socket.gethostname();
+
 #3. Especificamos la IP del servidor, de dos maneras posibles:
 #3.1. Dandola manualmente
 host='137.135.177.253'
