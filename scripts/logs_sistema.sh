@@ -1,6 +1,6 @@
 #!/bin/bash
-#Script para conocer usuarios del sistema y ultima vez que accedieron al host
-#./acceso_usuarios.sh
+#Script para ver los logs del sistema de cada host"
+
 ansible all -a "cat /var/log/syslog" > salida.txt
 
 numHost=`wc -l /etc/ansible/hosts`
