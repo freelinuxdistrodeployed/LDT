@@ -15,4 +15,4 @@ passwd $USER_PASSWORD
 
 #3.Contactar con el servidor y enviarle la última información necesaria:
 
-
+  #3.1 Ejecutar el script client.py
