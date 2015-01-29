@@ -1,0 +1,11 @@
+FROM ubuntu:latest
+
+MAINTAINER JuanAFernandez juanantc mortega87 rubenadrados JA-Gonz
+
+#Ejecutar script de cliente
+
+ADD https://github.com/freelinuxdistrodeployed/LDT/blob/master/configHost.sh ./configHost.sh
+CMD ["/bin/bash", "/configHost.sh"]
+
+
+
