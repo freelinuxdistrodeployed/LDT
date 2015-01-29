@@ -1,3 +1,0 @@
-Host12014.cloudapp.net ansible_ssh_host=137.135.177.209 ansible_ssh_user=usuario
-Host22014.cloudapp.net ansible_ssh_host=23.102.31.130 ansible_ssh_user=usuario
-Host32014.cloudapp.net ansible_ssh_host=23.102.24.224 ansible_ssh_user=usuario
