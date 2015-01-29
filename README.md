@@ -1,4 +1,4 @@
-#[LDT](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/) (Linux Deployed Tool)]
+#[LDT](http://freelinuxdistrodeployed.github.io/LDT) (Linux Deployed Tool)]
 
 ![](img/linux-console.jpg)
 
@@ -9,12 +9,17 @@ Sistema de control y mantenimiento remoto de equipos con S.O. Linux.
 
 ###Instalación:
 
+#####Servidor
+
 Para realizar la instalación de LDT sólo es necesario hacer clone de este repositorio así:
 
     git clone https://github.com/freelinuxdistrodeployed/freelinuxdistrodeployed.git
 
-Después ejecutar el script **install.sh** que realizará la instalación de todos los paquetes necesarios para el funcionamiento de LDT.
+Después ejecutar el script **install.sh** que realizará la instalación y configuración de todos los paquetes necesarios para el funcionamiento de LDT.
 
+#####Clientes
+
+Para asociar los clientes al servidor debemos hacer una copia del repositorio, de la misma forma que en el servidor para después ejecutar (siempre que antes el servidor esté operativo) el script **client.py** situado en *LDT/scripts/sockets*
 
 ###Uso:
 
@@ -62,4 +67,4 @@ Además tenemos el núcleo del programa, la carga de perfiles en una lista de ho
 
 ###Desarrollo:
 
-Para saber más sobre el estado, característica, integrantes y evolución del proyecto puedes visitar nuestra [**web de desarrollo.**](http://freelinuxdistrodeployed.github.io/freelinuxdistrodeployed/)
+Para saber más sobre el estado, característica, integrantes y evolución del proyecto puedes visitar nuestra [**web de desarrollo.**](http://freelinuxdistrodeployed.github.io/LDT)
