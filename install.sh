@@ -29,7 +29,11 @@ sudo apt-get install -y ansible
 echo -e "\n\e[0;32mVersión de Ansible instalada\e[0m"
 ansible --version
 
-#3. Apertura del socket de escucha de peticiones de conexión de clientes:
+
+#3.Generación del par de claves SSH
+
+
+#4. Apertura del socket de escucha de peticiones de conexión de clientes:
 
 #Ejecutamos el script que abre el socket, en segundo plano.
 echo -e "\n\e[0;32mAbriendo socket de escucha en segundo plano\e[0m"

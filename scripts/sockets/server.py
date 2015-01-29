@@ -8,6 +8,7 @@ Debe ejecutarse como superusuario para que pueda abrirse el fichero de host en /
 
 import socket
 import commands
+import os
 
 #1.Abrimos el fichero donde se graban los host
 ficheroHosts=open("/etc/ansible/hosts","r+w")
@@ -63,14 +64,20 @@ while True: ##Proceso infinito de escucha##
     linea+=str(direccion);
     linea+=' ';
     #Añadimos el usuario especial creado en el host:
-    linea+='ansible_ssh_user=usuario';
+    linea+='ansible_ssh_user=ansibleUser';
 
     print "Añadido ", linea
     ficheroHosts.write(linea+'\n');
 
+    #Enviamos la clave pública del servidor.
+    orden="ssh-copy-id -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no ansibleUser@"
+    #Añadimos la direccion
+    orden+=direccion
+    os.system(orden)
+
     c.close() #Cerramos la conexion
 
-    #Esta conexión se cierra pero el socket queda abierto para petetir el proceso siempre que se quiera.
+    #Esta conexión se cierra pero el socket queda abierto para repetir el proceso siempre que se quiera.
 
 #Cerramos el fichero Hosts
 ficheroHosts.close()
