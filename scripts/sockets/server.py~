@@ -10,7 +10,7 @@ import socket
 import commands
 import os
 
-PASSWORD = "ldtansible" 
+PASSWORD = ldtansible 
 
 #1.Abrimos el fichero donde se graban los host
 ficheroHosts=open("/etc/ansible/hosts","r+w")

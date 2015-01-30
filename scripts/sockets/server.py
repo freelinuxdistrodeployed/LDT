@@ -76,7 +76,7 @@ while True: ##Proceso infinito de escucha##
     #orden+=$CONTRASENIA 
     #orden+="ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@"
 
-    orden="sshpass -p"{$PASSWORD}" ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@" 
+    orden="sshpass -p"${PASSWORD}" ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@" 
 
 
     #Añadimos la direccion
