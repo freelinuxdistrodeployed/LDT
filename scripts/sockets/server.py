@@ -10,7 +10,7 @@ import socket
 import commands
 import os
 
-CONTRASENIA = "ldtansible" 
+PASSWORD = ldtansible 
 
 #1.Abrimos el fichero donde se graban los host
 ficheroHosts=open("/etc/ansible/hosts","r+w")
@@ -72,9 +72,12 @@ while True: ##Proceso infinito de escucha##
     ficheroHosts.write(linea+'\n');
 
     #Enviamos la clave pública del servidor.
-    orden="sshpass -p"
-    orden+=$CONTRASENIA 
-    orden+="ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@"
+    #orden="sshpass -p"
+    #orden+=$CONTRASENIA 
+    #orden+="ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@"
+
+    orden="sshpass -p"{$PASSWORD}" ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@" 
+
 
     #Añadimos la direccion
     orden+=direccion
