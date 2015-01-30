@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+ 
 """
 Script en python para establecer socket de escucha.
 Debe ejecutarse como superusuario para que pueda abrirse el fichero de host en /etc.
