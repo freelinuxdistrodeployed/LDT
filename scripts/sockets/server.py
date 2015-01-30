@@ -70,7 +70,7 @@ while True: ##Proceso infinito de escucha##
     ficheroHosts.write(linea+'\n');
 
     #Enviamos la clave pública del servidor.
-    orden="ssh-copy-id -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no ansibleUser@"
+    orden="sshpass -p1234 ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@"
     #Añadimos la direccion
     orden+=direccion
     os.system(orden)
