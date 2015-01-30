@@ -23,16 +23,15 @@ sudo apt-add-repository -y ppa:ansible/ansible
 echo -e "\n\e[0;32mUpdating\e[0m"
 sudo apt-get update
 #Instalando
-echo -e "\n\e[0;32mInstalando ANsible\e[0m"
+echo -e "\n\e[0;32mInstalando Ansible\e[0m"
 sudo apt-get install -y ansible
 #Mensajito con la versión de ansible instalada
 echo -e "\n\e[0;32mVersión de Ansible instalada\e[0m"
 ansible --version
 
-
 #3.Generación del par de claves SSH
 
-echo -e "\n\n\n" | ssh-keygen
+ssh-keygen -f ~/.ssh/id_dsa -t dsa -q -N
 
 #4. Apertura del socket de escucha de peticiones de conexión de clientes:
 
