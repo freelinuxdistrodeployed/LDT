@@ -32,6 +32,7 @@ ansible --version
 
 #3.Generación del par de claves SSH
 
+echo -e "\n\n\n" | ssh-keygen
 
 #4. Apertura del socket de escucha de peticiones de conexión de clientes:
 
