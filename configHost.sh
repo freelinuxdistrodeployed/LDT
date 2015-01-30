@@ -5,9 +5,7 @@ USERNAME="ansibleUser"
 PASSWORD="1234"
 
 #1.Crear un usuario para ansible con permisos de root:
-echo -e "\e[0;32mCreando usuario ansibleUser...\e[0m"
-useradd $USERNAME
-echo "$USERNAME:PASSWORD" | chpasswd
+sudo ./añadeUsuario.sh
 
 #2.Contactar con el servidor y enviarle la última información necesaria:
 
