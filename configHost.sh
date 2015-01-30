@@ -2,7 +2,7 @@
 #Script de configuración del host.
 
 USERNAME="ansibleUser"
-PASSWORD="1234"
+PASSWORD="ldtansible"
 
 #1.Crear un usuario para ansible con permisos de root:
 sudo ./añadeUsuario.sh
