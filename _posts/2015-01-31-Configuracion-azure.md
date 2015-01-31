@@ -1,12 +1,11 @@
 ---
 layout:     post
-title:      "Configuración Azure"
+title:      "Configuracion Azure"
 subtitle:   "Como configurar Microsoft Azure en Linux"
-date:       2014-11-25 11:40:00
+date:       2015-01-31 13:40:00
 author:     "mortega87"
-header-img: "img/post-bg-01.jpg"
+header-img: "img/post-bg-02.jpg"
 ---
-
 
 Para nuestra aplicación, estamos utilizando Microsoft Azure para alojar nuestras máquinas virtuales en las que estamos realizando las pruebas. En este post voy a tratar de explicar como configurar el cliente que va a realizar la instalación de dichas máquinas virtuales.
 
