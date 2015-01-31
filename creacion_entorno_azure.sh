@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Script para crear el entorno de Azure, donde vamos a instalar una maquina servidor y tres clientes
+#En primer lugar hay que configurar el sistema operativo,siguiendo un post alojado en la web del proyecto
 #Tener en cuenta que en la creacion hay que pasar el nombre y la contraseña de inicio de sesion y superusuario
 #Despues de la creacion de las maquinas virtuales se ejecutaran
 
