@@ -31,7 +31,7 @@ linea="";
 while True: ##Proceso infinito de escucha##
 
     #1.Abrimos el fichero donde se graban los host
-    ficheroHosts=open("/etc/ansible/hosts","r+w")
+    ficheroHosts=open("/etc/ansible/hosts","arw")
 
 
     #5.1.Aceptamos los mensajes
