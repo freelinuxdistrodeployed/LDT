@@ -13,7 +13,7 @@ import os
 
 
 #1.Abrimos el fichero donde se graban los host
-ficheroHosts=open("/etc/ansible/hosts","r+w")
+#ficheroHosts=open("/etc/ansible/hosts","r+w")
 
 #2.Creamos un objeto de tipo socket
 s=socket.socket()
@@ -29,6 +29,10 @@ s.bind(('',port))
 s.listen(5);
 linea="";
 while True: ##Proceso infinito de escucha##
+
+    #1.Abrimos el fichero donde se graban los host
+    ficheroHosts=open("/etc/ansible/hosts","r+w")
+
 
     #5.1.Aceptamos los mensajes
     c, addr=s.accept();
@@ -83,12 +87,14 @@ while True: ##Proceso infinito de escucha##
     orden+=direccion
     os.system(orden)
 
+
+    #Cerramos el fichero de hosts
+    ficheroHosts.close()
+
+
     c.close() #Cerramos la conexion
 
     #Esta conexión se cierra pero el socket queda abierto para repetir el proceso siempre que se quiera.
-
-#Cerramos el fichero Hosts
-ficheroHosts.close()
 
 
 #Referencias:
