@@ -15,11 +15,11 @@ Para realizar la instalación de LDT sólo es necesario hacer clone de este repo
 
     git clone https://github.com/freelinuxdistrodeployed/freelinuxdistrodeployed.git
 
-Después ejecutar el script **install.sh** que realizará la instalación y configuración de todos los paquetes necesarios para el funcionamiento de LDT.
+Después ejecutar el script **install.sh** que realizará la instalación y configuración de todos los paquetes necesarios para el funcionamiento de LDT. (El script debe ser ejecutado por el mismo usuario que usará el programa)
 
 #####Clientes
 
-Para asociar los clientes al servidor debemos hacer una copia del repositorio, de la misma forma que en el servidor para después ejecutar (siempre que antes el servidor esté operativo) el script **client.py** situado en *LDT/scripts/sockets*
+Para asociar los clientes al servidor debemos hacer una copia del repositorio, de la misma forma que en el servidor para después ejecutar (siempre que antes el servidor esté operativo) el script **client.py** situado en *LDT/scripts/sockets* y ejecutar **configHost.sh** como root.
 
 ###Uso:
 

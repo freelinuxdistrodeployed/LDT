@@ -8,30 +8,27 @@ echo -e "\n\e[0;32mInstalando...\e[0m"
 #1. Instalación de python
 
 echo -e "\n\e[0;32mInstalando python \e[0m"
-#sudo apt-get install -y python
+sudo apt-get install -y python
 
 #2. Instalación de Ansible:
 
 echo -e "\n\e[0;32mInstalando certificados\e[0m"
 #Instalación de certificados:
-#sudo apt-get install -y software-properties-common
+sudo apt-get install -y software-properties-common
 
 #Añadiendo los repositorios de ansible:
 echo -e "\n\e[0;32mActualizando repositorios\e[0m"
-#sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-add-repository -y ppa:ansible/ansible
 #Actualizando:
 echo -e "\n\e[0;32mUpdating\e[0m"
 #sudo apt-get update
 #Instalando
 echo -e "\n\e[0;32mInstalando Ansible\e[0m"
-#sudo apt-get install -y ansible
-
-rm /etc/ansible/hosts
-touch /etc/ansible/hosts
+sudo apt-get install -y ansible
 
 #Mensajito con la versión de ansible instalada
 echo -e "\n\e[0;32mVersión de Ansible instalada\e[0m"
-#ansible --version
+ansible --version
 
 #3.Generación del par de claves SSH
 
