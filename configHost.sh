@@ -3,6 +3,7 @@
 
 
 #1.Crear un usuario para ansible con permisos de root:
+echo -e "\n\e[0;32mCreando usuario ansibleUser \e[0m"
 sudo ./añadeUsuario.sh
 
 #2.Contactar con el servidor y enviarle la última información necesaria:

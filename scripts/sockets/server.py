@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- 
+
 """
 Script en python para establecer socket de escucha.
 Debe ejecutarse como superusuario para que pueda abrirse el fichero de host en /etc.
@@ -10,7 +10,7 @@ import socket
 import commands
 import os
 
-PASSWORD = ldtansible 
+
 
 #1.Abrimos el fichero donde se graban los host
 ficheroHosts=open("/etc/ansible/hosts","r+w")
@@ -73,10 +73,10 @@ while True: ##Proceso infinito de escucha##
 
     #Enviamos la clave pública del servidor.
     #orden="sshpass -p"
-    #orden+=$CONTRASENIA 
+    #orden+=$CONTRASENIA
     #orden+="ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@"
 
-    orden="sshpass -p"${PASSWORD}" ssh-copy-id -i ~/.ssh/id_rsa.pub -o ansibleUser@" 
+    orden="sshpass -p1234 ssh-copy-id -i ~/.ssh/id_rsa.pub ansibleUser@"
 
 
     #Añadimos la direccion
