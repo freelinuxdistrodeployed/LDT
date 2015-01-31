@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Acciones desatendidas"
-subtitle:   "Uso de SSHPass y echo para evitar interacción con el usuario"
+subtitle:   "Herramientas para evitar la interacción con el usuario"
 date:       2015-01-30 20:00:00
 author:     "juanantc"
 header-img: "img/post-bg-02.jpg"
