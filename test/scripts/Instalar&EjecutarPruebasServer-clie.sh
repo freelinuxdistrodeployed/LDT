@@ -21,11 +21,17 @@ sudo docker -d &
 #Instalación de Ubuntu
 sudo docker pull ubuntu
 
-#Creación de la imagen de pruebas
-sudo docker build -t "pruebas" - < recurso_pruebas.tar.gz
+#Creación de la imagen de pruebas cliente
+sudo docker build -t "cliente" - < Dockerfile_cliente
+
+#Creación de la imagen de pruebas servidor
+sudo docker build -t "servidor" - < Dockerfile_servidor
+
+#Ejecución de la imagen de servidor
+sudo docker run -i servidor
 
 #Ejecución de la imagen de pruebas
-sudo docker run -i pruebas
+sudo docker run -i cliente
 
 #Lo desinstalamos del sistema
 sudo update-rc.d -f InstalarDocker-2.sh remove

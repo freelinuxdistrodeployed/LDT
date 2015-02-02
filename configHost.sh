@@ -6,9 +6,8 @@
 echo -e "\n\e[0;32mCreando usuario ansibleUser \e[0m"
 sudo ./añadeUsuario.sh
 
-#2.Contactar con el servidor y enviarle la última información necesaria:
 
-#2.1 Ejecutar el script client.py
+#2 Ejecutar el script client.py
 
 echo -e "\e[0;32mConectando con el servidor...\e[0m"
 python scripts/sockets/client.py
