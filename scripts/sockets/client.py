@@ -18,11 +18,11 @@ miNombre=socket.gethostname();
 #3.Especificamos la IP del servidor, de dos maneras posibles:
 
 #3.1.Dándola manualmente
-host='137.135.177.253'
+host='137.135.176.48'
 
 #3.2.Consiguiendo la ip del servidor resolviendo su nombre de dominio
 try:
-   host_ip=socket.gethostbyname('ansibleserver15.cloudapp.net')
+   host_ip=socket.gethostbyname('servermachine2015.cloudapp.net')
 except socket.gaierror:
    #Cuando no pueda resover el nombre del server:
    print "No ha sido posible resolver el nombre del server"
