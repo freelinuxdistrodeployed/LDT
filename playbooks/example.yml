@@ -1,6 +1,0 @@
----
-- hosts: all
-  remote_user: usuario
-  tasks:
-  - name: Say hi!
-    command: echo "hello!"

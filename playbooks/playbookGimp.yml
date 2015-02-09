@@ -1,7 +1,0 @@
----
-- hosts: all
-  sudo: true
-  tasks:
-  - name: Instalar editor gráfico Gimp
-    apt: pkg=gimp state=latest
- 
