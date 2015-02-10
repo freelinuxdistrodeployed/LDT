@@ -12,7 +12,7 @@ if [ $(id -u) -eq 0 ]; then
 	else
 		pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
 		useradd -m -p $pass $username
-		echo "ansibleUser ALL=(ALL) ALL" | cat >> /etc/sudoers 
+		echo "ansibleUser ALL=(ALL) NOPASSWD: ALL" | cat >> /etc/sudoers 
 fi
 else
 	exit 2
