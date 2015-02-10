@@ -40,45 +40,92 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
+		  <!--Punto 1.¿Qué es LDT? -->
+
+				<!--Página 1-->
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>LDT</h1>
+					<p>Linux Deployed Tool</p>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="https://github.com/JA-Gonz">@JA-Gonz</a> / <a href="https://github.com/rubenadrados">@rubenadrados</a> / <a href="https://github.com/mortega87">@mortega87</a> / <a href="https://github.com/juanantc">@juanantc</a>	/ <a href="https://github.com/juanAFernandez">@juanAFernandez</a> </small>
 					</p>
 				</section>
 
+				<!--Pagina 2-->
 				<section>
-					<h2>Hello There</h2>
+					<h1>¿Qué es LDT?</h1>
 					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+						Un sistema de control remoto de equipos Linux con el que poder simplificar su administración y contról.
 					</p>
+
 				</section>
 
-				<!-- Example of nested vertical slides -->
+				<!--Página 3, con paǵinas verticales -->
 				<section>
+
+					<!-- Nivel 0 -->
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<p>¿Qué podemos hacer con el?</p>
+						<img data-src="img/install.png" width='150' height='150'>
+						<img data-src="img/user.png" width='150' height='150'>
+						<img data-src="img/mensaje.png" width='150' height='150'>
+						<img data-src="img/disco.png" width='150' height='150'>
+						<img data-src="img/github.png" width='150' height='150'>
+
+					</section>
+
+					<!-- Nivel 1: Instalaciones. -->
+					<section>
+						<p>Realizar instalaciones y actualizaciones del software de las máquinas.</p>
+						<p>
+							<img data-src="img/install.png" width='250' height='250'>
+							<small>
+							Usando un gestor de paquetes como apt-get con todas sus posibilidades como si estuvieramos
+							 delante de los equipos.
+						</small>
+						</p>
+					</section>
+
+					<!-- Nivel 2: Gestión de usuarios. -->
+					<section>
+						<p>Gestionar usuarios</p>
+						<p><small>Dar de alta a nuevos usuarios, eliminarlos o conocer su actividad (logs).</small></p>
+						<img data-src="img/user.png" width='250' height='250'>
 						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
 					</section>
+
+					<!-- Nivel 3: Notificaciones a usuarios. -->
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
+						<p>Notificaciones</p>
+						<p><small>Enviar informaicón importante que será recibida como mensajes emergentes en el escritorio de los usuarios.</small></p>
+						<img data-src="img/mensaje.png" width='250' height='250'>
 						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
 					</section>
-				</section>
+
+					<!-- Nivel 4: Consultar hardware de los equipos. -->
+					<section>
+						<p>Hardware</p>
+						<p><small>Podremos consultar la ocupación de los discos y el hardware de cada máquina.</small></p>
+						<img data-src="img/disco.png" width='250' height='250'>
+						<br>
+					</section>
+
+					<!-- Nivel 5: Actualizar desde respositorio. -->
+					<section>
+						<p>Actualizaciones de código</p>
+						<p><small>Podemos realizar actualizaciones de código alojado en GitHub sin necesidad de hacer clone y pull en cada máquina.</small></p>
+						<img data-src="img/github.png" width='250' height='250'>
+						<br>
+					</section>
+
+
+
+
+				</section> <!-- Fin de la página 3-->
+
+
+
 
 				<section>
 					<h2>Slides</h2>
@@ -104,23 +151,9 @@
 					</p>
 				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
 
-						```
-						<section data-markdown>
-						  ## Markdown support
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
 
 				<section>
 					<section id="fragments">
