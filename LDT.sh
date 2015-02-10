@@ -26,7 +26,7 @@ function _submenu1()
     echo "2) Modificar hosts (Añadir/eliminar)"
     echo "3) Probar conectividad hosts"
     echo -e "4) \e[1;31mSalir\e[0m"
-    echo 
+    echo
     echo -n "Indica una opcion: "
 }
 
@@ -48,8 +48,8 @@ function _submenu3()
 {
     echo -e "\n\e[0;32mDespliegue de perfiles\e[0m"
     echo "1) Ver grupos de host"
-    echo "2) Despliegue del perfil de administracion"
-    echo "3) Despliegue del perfil ..."
+    echo "2) Despliegue del perfil de usuario A"
+    echo "3) Despliegue del perfil de usuario B"
     echo -e "4) \e[1;31mSalir\e[0m"
     echo -n "Indica una opcion: "
 }
@@ -170,9 +170,9 @@ do
                         ;;
 
                     2)  #Elección 1 del submenu3
-		        echo -e "Cargando perfil ADMINISTRACION a host del grupo \e[1;31madmin\e[0m"
+		        echo -e "Cargando perfil gruo A \e[1;31madmin\e[0m"
 
-			ansible-playbook -i playbooks/jerarquia/hosts playbooks/jerarquia/site.yml
+			ansible-playbook  playbooks/playbookVnstat.yml
 			_submenu3
                         ;;
                     3)  #Elección 2 del submenu3

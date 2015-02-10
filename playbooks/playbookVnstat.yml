@@ -1,0 +1,6 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Instalar control de red vnstat
+    apt: pkg=vnstat state=latest
