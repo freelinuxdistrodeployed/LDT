@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+		  <!--Punto 1.¿Qué es LDT? -->
+
+				<!--Página 1-->
+				<section>
+					<h1>LDT</h1>
+					<p>Linux Deployed Tool</p>
+					<p>
+						<small>Created by <a href="https://github.com/JA-Gonz">@JA-Gonz</a> / <a href="https://github.com/rubenadrados">@rubenadrados</a> / <a href="https://github.com/mortega87">@mortega87</a> / <a href="https://github.com/juanantc">@juanantc</a>	/ <a href="https://github.com/juanAFernandez">@juanAFernandez</a> </small>
+					</p>
+				</section>
+
+				<!--Pagina 2-->
+				<section>
+					<h1>1.¿Qué es LDT?</h1>
+					<p>
+						Un sistema de control remoto de equipos Linux con el que poder simplificar su administración y contról.
+					</p>
+
+				</section>
+
+				<!--Página 3, con paǵinas verticales -->
+				<section>
+
+					<!-- Nivel 0 -->
+					<section>
+						<p>¿Qué podemos hacer con el?</p>
+						<img data-src="img/install.png" width='150' height='150'>
+						<img data-src="img/user.png" width='150' height='150'>
+						<img data-src="img/mensaje.png" width='150' height='150'>
+						<img data-src="img/disco.png" width='150' height='150'>
+						<img data-src="img/github.png" width='150' height='150'>
+
+					</section>
+
+					<!-- Nivel 1: Instalaciones. -->
+					<section>
+						<p>Realizar instalaciones y actualizaciones del software de las máquinas.</p>
+						<p>
+							<img data-src="img/install.png" width='250' height='250'>
+							<small>
+							Usando un gestor de paquetes como apt-get con todas sus posibilidades como si estuvieramos
+							 delante de los equipos.
+						</small>
+						</p>
+					</section>
+
+					<!-- Nivel 2: Gestión de usuarios. -->
+					<section>
+						<p>Gestionar usuarios</p>
+						<p><small>Dar de alta a nuevos usuarios, eliminarlos o conocer su actividad (logs).</small></p>
+						<img data-src="img/user.png" width='250' height='250'>
+						<br>
+					</section>
+
+					<!-- Nivel 3: Notificaciones a usuarios. -->
+					<section>
+						<p>Notificaciones</p>
+						<p><small>Enviar informaicón importante que será recibida como mensajes emergentes en el escritorio de los usuarios.</small></p>
+						<img data-src="img/mensaje.png" width='250' height='250'>
+						<br>
+					</section>
+
+					<!-- Nivel 4: Consultar hardware de los equipos. -->
+					<section>
+						<p>Hardware</p>
+						<p><small>Podremos consultar la ocupación de los discos y el hardware de cada máquina.</small></p>
+						<img data-src="img/disco.png" width='250' height='250'>
+						<br>
+					</section>
+
+					<!-- Nivel 5: Actualizar desde respositorio. -->
+					<section>
+						<p>Actualizaciones de código</p>
+						<p><small>Podemos realizar actualizaciones de código alojado en GitHub sin necesidad de hacer clone y pull en cada máquina.</small></p>
+						<img data-src="img/github.png" width='250' height='250'>
+						<br>
+					</section>
+
+
+
+
+				</section> <!-- Fin de la página 3-->
+
+				<!-- Página 4: Como funciona -->
+				<section>
+					<h1>2.¿Cómo funciona?</h1>
+					<p> LDT funciona con una estructura cliente-servidor</p>
+				</section>
+
+				<!-- Página 5: como funciona con paginas verticales -->
+				<section>
+					<!-- Nivel 0: Cliente y servidor -->
+					<section>
+						<ul>
+							<li> <h3> Cliente:</h3></li>
+
+						</ul>
+					</section>
+				</section>
+
+				<!-- Página 4: Como funciona -->
+				<section>
+					<h1>2.¿Cómo funciona?</h1>
+					<p> LDT funciona con una estructura cliente-servidor</p>
+				</section>
+
+				<!-- Página 5: como funciona con paginas verticales -->
+				<section>
+					<!-- Nivel 0: Cliente y servidor -->
+					<section>
+						<ul>
+							<li> <h3> Cliente:</h3></li>
+							<p> Pyton(No es necesaria instalación de paquetes adicionales)</p>
+							<p>Creación de un usuario (Homogeneización de conexión en Ansible)</p>
+							<li><h3> Servidor:</h3></li>
+
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h1>3.DESARROLLO</h1>
+					<h3>Aplicaciones y elementos utilizados para el desarrollo del proyecto</h3>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<IMG SRC="/img/github2.png">
+						<p>Para el desarrollo del proyecto hemos utilizado GitHub como herramienta para control de versiones de los elementos incorporados por cada componente del equipo de desarrollo.</p>
+						<br>
+					</section>
+					<section>
+						<IMG SRC="/img/azure.png">
+						<p>Azure ha sido utilizado en nuestro proyecto para realizar el despliegue de nuestras aplicación y la comunicación entre el servidor y el cliente.</p>
+						<p>Gracias a nuestras cuentas de estudiante se ha realizado el despligue en 1 servidor y 3 clientes (todos ellos Ubuntu)</p>
+					</section>
+					<section>
+						<IMG SRC="/img/docker.png">
+						<p>Para la realización de los test se ha utilizado Docker.
+						<p>Mediante los ficheros denominados Dockerfile creamos los contenedores para las pruebas, en este caso uno para cliente y otro para servidor.</p>
+						<p>A partir de scripts se instalarán los componentes principales sobre los contenedores para realizar los tests.</p>
+						<br>
+					</section>
+
+					<section>
+						<h2>OTRAS HERRAMIENTAS</h2>
+						<p>SHELL - Realización de scripts en bash para incorporar funcionalidades a la aplicación. </p>
+						<p>PYTHON - Utilizado para la comunicación entre cliente y servidor.</p>
+						<p>MARKDOWN - Documentación de los avances del proyecto.</p>
+						<p>JEKYLL - Blog donde alojamos la documentación del proyecto.</p>
+						<p>REVEALS - Presentación del proyecto.</p>
+				</section>
+			</section>
+
+			<section>
+				<h1>4.AMPLIACION</h1>
+				<p>Multiplataforma</p>
+				<p>Interfaz de Usuario</p>
+				<p>Más funcionalidades</p>
+			</section>
+
+			<section>
+				<section>
+				<h2>Ejemplo de Interfaz de Usuario</h2>
+				<p>Página principal para identificación del administrador</p>
+				<IMG SRC="/img/web1.png">
+				</section>
+					<section>
+						<h2>Ejemplo de Interfaz de Usuario</h2>
+						<p>Monitorización de hosts</p>
+						<IMG SRC="/img/web2.png">
+					</section>
+			</section>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
