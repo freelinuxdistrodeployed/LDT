@@ -67,7 +67,7 @@ do
                     1)
 			#Eleccion 1 del submenu1: Ver host registrados
                         echo -e "\e[1;32mHost registrados:\e[0m"
-			cat hosts
+			cat /etc/ansible/hosts
 			echo ""
 			_submenu1
                         ;;
