@@ -25,9 +25,9 @@ def funciones(request):
 def mostrarEquiposConectados(request):
 
     '''
-        En esta función se llamará al script de ansible que comprueba la conectividad de las máquinas.
+        En esta funcion se llamara al script de ansible que comprueba la conectividad de las maquinas.
     '''
-    
+
 
     t = get_template('mostrarEquiposConectados.html')
     html = t.render(Context({}))
