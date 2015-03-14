@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
 #Importamos la funcion que hemos definido en el fichero views.py
-from prueba.views import index, funciones, mostrarEquiposConectados
+from prueba.views import index, funciones, mostrarEquiposConectados, mostrarOcupacionDisco
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     (r'^index/$', index),
     (r'^funciones/$', funciones),
     (r'^mostrarEquiposConectados/$', mostrarEquiposConectados),
+    (r'^mostrarOcupacionDisco/$', mostrarOcupacionDisco),
     # Examples:
     # url(r'^$', 'prueba.views.home', name='home'),
     # url(r'^prueba/', include('prueba.foo.urls')),

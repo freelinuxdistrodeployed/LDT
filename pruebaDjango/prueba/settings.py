@@ -103,7 +103,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'prueba.urls'
 
 TEMPLATE_DIRS = (
-    './prueba/templates'
+    '/home/juan/Documentos/PrimerCuatrimestre1415/Inf.Virtuales/LDT/pruebaDjango/prueba/templates'
 
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.

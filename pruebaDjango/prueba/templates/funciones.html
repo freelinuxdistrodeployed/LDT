@@ -30,6 +30,7 @@
 
     <div class="container">
 
+      {%block nav %}
       <!-- Static navbar -->
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -54,15 +55,23 @@
 
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
-      </nav>
+      </nav><!-- end static navbar -->
+      {% endblock %}
+
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Actions</h1>
-        <p>Texto secundario</p>
+
         <p>
-          <a class="btn btn-lg btn-primary" href="../mostrarEquiposConectados" role="button">Check hosts &raquo;</a>
+          <a class="btn btn-lg btn-primary" href="../mostrarEquiposConectados" role="button">Check hosts</a>
+          <a class="btn btn-lg btn-primary" href="../mostrarOcupacionDisco" role="button">Check HDDs</a>
         </p>
+
+        {% block datos %}
+        <!-- Datos here! -->
+        {% endblock %}
+
       </div>
 
     </div> <!-- /container -->
