@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+show_help() {
+    echo -e "Uso:"
+    echo -e "LDT [options]"
+    echo -e "\t-h: Imprime esta ayuda"
+}
+
+while getopts "h?v" opt; do
+    case "$opt" in
+	h|\?)
+	    show_help
+	    exit 0	
+            ;;
+	v)  verbose=1
+            ;;
+    esac
+done
