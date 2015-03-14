@@ -5,6 +5,8 @@ from django.template import Context
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 import datetime
+#Para ejecutar ordenes del sistema.
+import os
 
 def index(request):
     ahora = datetime.datetime.now()
@@ -24,10 +26,11 @@ def funciones(request):
 
 def mostrarEquiposConectados(request):
 
+
     '''
         En esta funcion se llamara al script de ansible que comprueba la conectividad de las maquinas.
     '''
-
+    os.system('ls')
 
     t = get_template('mostrarEquiposConectados.html')
     html = t.render(Context({}))
