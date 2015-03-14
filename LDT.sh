@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 # -e para que interprete las ordenes especiales de la barra invertida \
