@@ -5,6 +5,15 @@
 echo -e "\n\e[0;32mLDT Linux Deployed Tool Version 1.0 \e[0m"
 echo -e "\n\e[0;32mInstalando...\e[0m"
 
+#0. Creación de enlace simbólico en el directorio de archivos ejecutables del usuario:
+sudo ln -s ./LDT.sh /usr/bin
+
+#0.1 Creación del alias permanente:
+echo "alias ldt='LDT.sh'" >> ~/.bashrc
+
+#0.2 Actualización del bashrc
+. .bashrc
+
 #1. Instalación de python
 
 echo -e "\n\e[0;32mInstalando python \e[0m"
@@ -19,9 +28,11 @@ sudo apt-get install -y software-properties-common
 #Añadiendo los repositorios de ansible:
 echo -e "\n\e[0;32mActualizando repositorios\e[0m"
 sudo apt-add-repository -y ppa:ansible/ansible
+
 #Actualizando:
 echo -e "\n\e[0;32mUpdating\e[0m"
 #sudo apt-get update
+
 #Instalando
 echo -e "\n\e[0;32mInstalando Ansible\e[0m"
 sudo apt-get install -y ansible
