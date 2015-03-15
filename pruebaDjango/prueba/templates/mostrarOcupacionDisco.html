@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <meta HTTP-EQUIV="X-UA-COMPATIBLE" CONTENT="IE=EmulateIE9" >
+  <script type="text/javascript" src="{% get_static_prefix %}d3.min.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}radialProgress.js"></script>
+
+
+  <style>
+
+
+
+  .background {
+    fill: #FFFFFF;
+    fill-opacity: 0.01;
+  }
+
+  .component {
+    fill: #e1e1e1;
+  }
+
+  .component .label {
+    font-family: Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+    fill: #0000FF;
+  }
+
+  .arc {
+    stroke-weight:0.1;
+    fill: #4e8fff;
+  }
+
+
+  .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+  }
+
+
+  .label {
+    font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
+    text-anchor: middle;
+  }
+
+  .radial-svg {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  #test .arc2 {
+    stroke-weight:0.1;
+    fill: #3660b0;
+  }
+
+  #outer {
+    background:#FFFFFF;
+    border-radius: 5px;
+    color: #000;
+  }
+
+  #div1, #div2, #div3, #div4 {
+    width: 33%;
+    height: 200px;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  #div2 .arc {
+    stroke-weight: 0.1;
+    fill: #f0a417;
+  }
+
+  #div2 .arc2 {
+    stroke-weight: 0.1;
+    fill: #b00d08;
+  }
+
+  #div3 .arc {
+    stroke-weight: 0.1;
+    fill: #1d871b;
+  }
+
+
+  .selectedRadial {
+    border-radius: 3px;
+    background: #f4f4f4;
+    color: #000;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    border: 1px solid rgba(200,200,200,0.85);
+  }
+
+  .radial {
+    border-radius: 3px;
+    background: #FFFFFF;
+    color: #000;
+
+  }
+
+
+</style>
+
+
+
+
+
+
+<!--Todo lo que haya en el block datos del padre se sustituirá por esto.-->
+{% block datos %}
+
+<h1>dfdsa</h1>
+
+
+    <div id="div1">here</div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  <div id='outer' style="width: 1000px; height:800px; margin: 0px auto; margin-top:20px; padding:10px">
+    <div id="main" style="width:1000px; height:200px; margin: 0px auto; ">
+      <div id="div1"></div>
+      <div id="div2"></div>
+      <div id="div3"></div>
+      <div id="div4"></div>
+    </div>
+  </div>
+-->
+
+
+  <script language="JavaScript">
+
+    var div1=d3.select(document.getElementById('div1'));
+    var div2=d3.select(document.getElementById('div2'));
+    var div3=d3.select(document.getElementById('div3'));
+    var div4=d3.select(document.getElementById('div4'));
+
+    start();
+
+    function onClick1() {
+      deselect();
+      div1.attr("class","selectedRadial");
+    }
+
+    function onClick2() {
+      deselect();
+      div2.attr("class","selectedRadial");
+    }
+
+    function onClick3() {
+      deselect();
+      div3.attr("class","selectedRadial");
+    }
+
+    function labelFunction(val,min,max) {
+
+    }
+
+    function deselect() {
+      div1.attr("class","radial");
+      div2.attr("class","radial");
+      div3.attr("class","radial");
+    }
+
+    function start() {
+
+      var rp1 = radialProgress(document.getElementById('div1'))
+      .label("RADIAL 1")
+      .onClick(onClick1)
+      .diameter(150)
+      .value(78)
+      .render();
+
+      var rp2 = radialProgress(document.getElementById('div2'))
+      .label("RADIAL 2")
+      .onClick(onClick2)
+      .diameter(150)
+      .value(132)
+      .render();
+
+      var rp3 = radialProgress(document.getElementById('div3'))
+      .label("RADIAL 3")
+      .onClick(onClick3)
+      .diameter(150)
+      .minValue(100)
+      .maxValue(200)
+      .value(150)
+      .render();
+
+    }
+  </script>
