@@ -1,6 +1,18 @@
 {% extends "funciones.html" %}
 
+<!--Todo lo que haya en el block datos del padre se sustituirá por esto.-->
 {% block datos %}
-<p>Equipos conectados</p>
-{{ lista }}
+
+<p>Equipos registrados:</p>
+
+  <h2>{{ listaDatos.0 }}</h2>
+  <h3>{{ listaDatos.1 }}</h3>
+
+  <!--Vamos pasar la ip por get -->
+  <a class="label label-success" href="../ping?ip={{listaDatos.1}}" >Check ping</a>
+  {% block prueba %}
+  <!-- datos here in sons -->
+  {% endblock %}
+
+
 {% endblock %}

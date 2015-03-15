@@ -1,5 +1,8 @@
 #encodign:utf-8
 
+# VISTAS !!!!!
+
+
 from django.template.loader import get_template
 from django.template import Context
 from django.http import HttpResponse
@@ -8,6 +11,8 @@ import datetime
 #Para ejecutar ordenes del sistema.
 import os
 import subprocess
+import commands
+from funcionesExtra import *
 
 def index(request):
     ahora = datetime.datetime.now()
@@ -26,16 +31,18 @@ def funciones(request):
 
 
 def mostrarEquiposConectados(request):
-
-
     '''
         En esta funcion se llamara al script de ansible que comprueba la conectividad de las maquinas.
     '''
-    output = subprocess.check_output(['ls', '-l'])
+    # -c :> lista hosts
+#    output = subprocess.call(['ls', '-l'])
+    output=commands.getoutput("/usr/bin/LDT2.sh -c")
 
+    salida=procesaSalidaEquipos(output)
 
     t = get_template('mostrarEquiposConectados.html')
-    html = t.render(Context({'lista': output}))
+    #lista es el nombre de la variable y salida la variable real.
+    html = t.render(Context({'listaDatos': salida}))
     return HttpResponse(html)
 
 
@@ -44,4 +51,22 @@ def mostrarOcupacionDisco(request):
     output="85%"
     t = get_template('mostrarOcupacionDisco.html')
     html=t.render(Context({'dato':output}))
+    return HttpResponse(html)
+
+
+
+
+#Funcion para realizar el ping!
+
+def ping(request):
+
+    ip = request.GET.get('ip')
+    ping="ping "+ip+" -c 2"
+    output=commands.getoutput(ping)
+    tamCadena=len(output)
+    pos=output.find("statistics")
+    output=output[pos:tamCadena]
+
+    t=get_template('ping.html')
+    html=t.render(Context({'salida':output}))
     return HttpResponse(html)
