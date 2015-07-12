@@ -3,6 +3,7 @@
 ![](img/linux-console.jpg)
 
 Sistema de control y mantenimiento remoto de equipos con S.O. Linux.
+Estado del desarrollo: **35%**
 
 ###Versión: 1.0
 
